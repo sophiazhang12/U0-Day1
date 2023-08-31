@@ -6,9 +6,9 @@ import java.io.PrintWriter;
 
 public class FileWriter {
 
-    public static void writeToFile () throws FileNotFoundException
+    public static void writeToFile (String file) throws FileNotFoundException
     {
-        PrintWriter writer = new PrintWriter("FileToWriteTo.txt");
+        PrintWriter writer = new PrintWriter(file);
         writer.println("Hello");
         writer.println("World");
         writer.close();
@@ -35,7 +35,7 @@ public class FileWriter {
 
     public static void main (String [] args) throws IOException
     {
-        writeToFile ();
+        writeToFile ("FileToWrite.txt");
         System.out.println("\n\n\n");
         System.out.println(fileToString("ReadFromThis.txt"));
         System.out.println(countCharacters("ReadFromThis.txt"));
